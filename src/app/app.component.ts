@@ -14,8 +14,8 @@ import { PostsService } from './posts.service';
 export class AppComponent implements OnInit, OnDestroy {
   loadedPosts: Post[] = [];
   isFetching = false;
-  error: string | null;
-  private errorSub: Subscription;
+  error!: string | null;
+  private errorSub!: Subscription;
 
   constructor(private http: HttpClient, private postsService: PostsService) {}
 
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   onCreatePost(postData: Post) {
     // Send Http request
-    this.postsService.createAndStorePost(postData.title, postData.content);
+    this.postsService.createAndStorePost(postData.title, postData.content, postData.numb);
   }
 
   onFetchPosts() {

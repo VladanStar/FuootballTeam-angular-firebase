@@ -16,8 +16,8 @@ export class PostsService {
 
   constructor(private http: HttpClient) {}
 
-  createAndStorePost(title: string, content: string) {
-    const postData: Post = { title: title, content: content };
+  createAndStorePost(title: string, content: string, numb:number) {
+    const postData: Post = { title: title, content: content, numb:numb };
     this.http
       .post<{ name: string }>(
         'https://test123-19673-default-rtdb.firebaseio.com/posts.json',

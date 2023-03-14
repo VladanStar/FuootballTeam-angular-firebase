@@ -6,9 +6,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { LoggingInterceptorService } from './logging-interceptor.service';
+import { TeamComponent } from './pages/team/team.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TeamComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [
     {
