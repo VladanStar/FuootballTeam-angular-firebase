@@ -16,9 +16,10 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FansWallComponent } from './pages/fans-wall/fans-wall.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, TeamComponent, HeaderComponent, FooterComponent, AddPlayerComponent, AboutComponent, ContactComponent, HomeComponent, FansWallComponent],
+  declarations: [AppComponent, TeamComponent, HeaderComponent, FooterComponent, AddPlayerComponent, AboutComponent, ContactComponent, HomeComponent, FansWallComponent, NotFoundComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule,    AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [
     {

@@ -6,6 +6,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FansWallComponent } from './pages/fans-wall/fans-wall.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
 {path:"team",component:TeamComponent},
@@ -14,6 +15,9 @@ const routes: Routes = [
 {path:"contact",component:ContactComponent },
 {path:"", component:HomeComponent},
 {path:'fans', component:FansWallComponent},
+
+{path:"not-found", component:NotFoundComponent},
+{ path: '**', redirectTo: '/not-found' },
 
 ];
 
