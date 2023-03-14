@@ -8,7 +8,7 @@ import {
 import { map, catchError, tap } from 'rxjs/operators';
 import { Subject, throwError } from 'rxjs';
 
-import { Post } from './post.model';
+import { Post } from '../post.model';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {

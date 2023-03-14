@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
 import { Post } from 'src/app/post.model';
-import { PostsService } from 'src/app/posts.service';
+import { PostsService } from 'src/app/services/posts.service';
 
 
 @Component({

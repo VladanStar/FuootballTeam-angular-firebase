@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { AuthInterceptorService } from './auth-interceptor.service';
-import { LoggingInterceptorService } from './logging-interceptor.service';
+
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { LoggingInterceptorService } from './services/logging-interceptor.service';
 import { TeamComponent } from './pages/team/team.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './shared/header/header.component';
