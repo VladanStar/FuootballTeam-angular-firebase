@@ -1,0 +1,43 @@
+<div class="banner">
+  <div class="content">
+    <h1>Great Players <br />Great football</h1>
+    <a routerLink="team">All Players <i class="bi bi-arrow-right"></i></a>
+  </div>
+</div>
+<!-- step  -->
+<div class="container mt-5 mb-5">
+  <h1 class="text-center">
+    Greates Football Trainers <span class="highlight">in The World</span>
+  </h1>
+  <div class="d-flex justify-content-center">
+    <!-- <div class="col-lg-3 mt-3 x" *ngFor="let td of trainerData; index as i">
+      <div class="playerbox">
+        <img src="{{ td.trainerImg }}" alt="trainer" />
+        <p class="text-center">{{ td.trainerName }}</p>
+      </div>
+    </div> -->
+  </div>
+</div>
+<hr />
+
+<!-- playerdbox  -->
+<div class="container mt-4 mb-4">
+  <h1 class="text-center">
+    Supportes <span class="highlight">Favourites Players</span>
+  </h1>
+  <div class="row">
+    <div
+      class="col-lg-3 mt-3x d-flex justify-content-center"
+      *ngFor="let pd of loadedPosts; "
+    >
+      <div class="playerbox">
+        <img src="{{ pd.title }}" alt="player" />
+        <h1>{{ pd.content }}</h1>
+        <p>{{ pd.numb}}</p>
+      </div>
+    </div>
+  </div>
+  <a routerLink="team" class="viewmorebtn"
+    >view more <i class="bi bi-arrow-right"></i
+  ></a>
+</div>
