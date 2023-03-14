@@ -7,10 +7,14 @@ import { AppComponent } from './app.component';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { LoggingInterceptorService } from './logging-interceptor.service';
 import { TeamComponent } from './pages/team/team.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { AddPlayerComponent } from './pages/add-player/add-player.component';
 
 @NgModule({
-  declarations: [AppComponent, TeamComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  declarations: [AppComponent, TeamComponent, HeaderComponent, FooterComponent, AddPlayerComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule,    AppRoutingModule,],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

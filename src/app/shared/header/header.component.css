@@ -1,0 +1,8 @@
+.active-link{
+  font-weight: bold;
+  color:var(--active-color);
+  text-decoration: underline;
+  }
+nav{
+background-color:  rgb(135, 141, 230) !important;
+}

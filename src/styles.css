@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Ubuntu', sans-serif;
+height: 100vh;
+}
+
+  :root
+  {
+      --primary-color: rgb(135, 141, 230);
+      --secondary-color:darkblue;
+--active-color:gold
+  }
+  h1{
+  text-align: center;
+  }
