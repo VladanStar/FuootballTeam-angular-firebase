@@ -1,0 +1,13 @@
+.first {
+  border: 2px solid red;
+}
+.second {
+  border: 2px solid blue;
+}
+.user {
+  font-size: 0.8rem;
+}
+.mess {
+  font-size: 24px;
+  font-weight: bold;
+}

@@ -5,13 +5,16 @@ import { AddPlayerComponent } from './pages/add-player/add-player.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FansWallComponent } from './pages/fans-wall/fans-wall.component';
 
 const routes: Routes = [
 {path:"team",component:TeamComponent},
 {path:'add', component:AddPlayerComponent},
 {path:'about', component:AboutComponent},
 {path:"contact",component:ContactComponent },
-{path:"home", component:HomeComponent}
+{path:"", component:HomeComponent},
+{path:'fans', component:FansWallComponent},
+
 ];
 
 @NgModule({

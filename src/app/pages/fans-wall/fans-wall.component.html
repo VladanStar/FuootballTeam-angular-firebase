@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-6 first">
+      <form [formGroup]="projectForm" (ngSubmit)="onSaveProject()">
+        <label for="tarea">Write message</label>
+        <div class="form-group">
+          <textarea
+            type="text"
+            class="textarea text-center my-2"
+            cols="55"
+            rows="6"
+            id="tarea"
+            formControlName="content"
+            placeholder="Unesite tekst"
+          ></textarea>
+        </div>
+
+        <div class="form-group my-2">
+          <label for="name">Fans Name</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="projectName"
+            class="form-control"
+          />
+        </div>
+        <hr />
+        <div class="form-group">
+          <label for="email">Fans Email</label>
+          <input
+            type="email"
+            formControlName="email"
+            id="email"
+            class="form-control"
+          />
+        </div>
+        <hr />
+        <div class="form-control my-2">
+          <label for="status">Fans Status</label>
+          <select
+            id="status"
+            formControlName="projectStatus"
+            class="form-control bg-info"
+          >
+            <option value="Fans" class="bg-primary">Fans</option>
+            <option value="Supporter" class="bg-danger">Supporter</option>
+            <option value="Club Founder" class="bg-warning">Club office</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Send Text</button>
+      </form>
+    </div>
+    <div class="col-6 second">
+      <div>
+        <p>Latest Message:</p>
+        <div class="border border-info py-2">
+          <p class="mess">{{ poruka }}</p>
+          <p class="user">{{ ime }}</p>
+        </div>
+        <hr />
+        <div *ngFor="let m of empList; let i = index">
+          <div *ngIf="i <= 5">
+            <p class="mess">{{ m.message }}</p>
+            <p class="user">
+              <em> {{ m.profil }}</em>
+            </p>
+            <p class="user">
+              <em> {{ m.status }}</em>
+            </p>
+
+            <hr />
+          </div>
+        </div>
+
+      </div>
+      <hr />
+    </div>
+  </div>
+</div>
