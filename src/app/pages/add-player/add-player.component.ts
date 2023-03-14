@@ -13,9 +13,32 @@ import { PostsService } from 'src/app/posts.service';
   styleUrls: ['./add-player.component.css']
 })
 export class AddPlayerComponent implements OnInit {
-constructor(){}
+  loadedPosts: Post[] = [];
+  isFetching = false;
+  error!: string | null;
+  private errorSub!: Subscription;
+constructor(private http: HttpClient, private postsService: PostsService){}
 ngOnInit(): void {
+  this.errorSub = this.postsService.error.subscribe((errorMessage) => {
+    this.error = errorMessage ? errorMessage : null;
+  });
 
+  this.isFetching = true;
+  this.postsService.fetchPosts().subscribe({
+    next: (posts) => {
+      this.isFetching = false;
+      this.loadedPosts = posts;
+    },
+    error: (error) => {
+      console.log('ERROR =', error);
+      this.isFetching = false;
+      this.error = error.message;
+    },
+  });
+}
+onCreatePost(postData: Post) {
+  // Send Http request
+  this.postsService.createAndStorePost(postData.title, postData.content, postData.numb);
 }
 
 }
