@@ -16,7 +16,7 @@ export class PostsService {
   currentPost!: Post;
 
 items: Observable<Post[]> | undefined;
-  [x: string]: any;
+
   error = new Subject<string>();
 
   constructor(private http: HttpClient, private router:Router) {}
