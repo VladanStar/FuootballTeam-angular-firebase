@@ -15,7 +15,7 @@ import { PostsService } from 'src/app/services/posts.service';
 export class PlayerComponent implements OnInit {
 
   getTeamId:any;
-  teamData:any;
+  teamData:Post[] = []
 
 
   constructor( public param:ActivatedRoute, private http: HttpClient, private postsService: PostsService){}
@@ -31,40 +31,39 @@ values:any;
 
 
 
-// this.isFetching = true;
-// this.postsService.fetchPosts().subscribe({
-//   next: (posts: any) => {
-//     this.isFetching = false;
-//     this.loadedPosts = posts;
-// posts.forEach((elem:any)=>{
-// const y={...elem.playload.toJSON()};
-// this.loadedPosts.push(y as unknown as Post)
-// })
-//   },
-//   error: (error: { message: any; }) => {
-//     console.log('ERROR =', error);
-//     this.isFetching = false;
-//     this.error = error.message;
-//   },
-// });
+this.isFetching = true;
+this.postsService.fetchPosts().subscribe({
+  next: (posts: any) => {
+    this.isFetching = false;
+    this.loadedPosts = posts;
+posts.forEach((elem:any)=>{
+const y={...elem.playload.toJSON()};
+this.loadedPosts.push(y as unknown as Post)
+})
+  },
+  error: (error: { message: any; }) => {
+    console.log('ERROR =', error);
+    this.isFetching = false;
+    this.error = error.message;
+  },
+});
 
 this.getTeamId = this.param.snapshot.paramMap.get('id');
 console.log(this.getTeamId,'getteam id');
-if(this.getTeamId){
+
 // this.loadedPosts =  this.loadedPosts.filter((value)=>{
 //   return   value.id == this.getTeamId;
 
 
-
+  }}
 // });
-this.teamData=this.loadedPosts
 
-console.log(this.loadedPosts.splice(this.getTeamId,1),'teamdata');
-}
 
-  }
 
-}
+
+
+
+
 
 // const menulist = menuKeys.map(menuKey => category.menulist[menuKey]);
 // return { ...category, menulist };
