@@ -40,7 +40,7 @@ ngOnInit(): void {
 
 deleteItem(i:number) {
   // Send Http request
-  this.postsService.deletePosts().subscribe(() => {
+  this.postsService.fetchPosts().subscribe(() => {
     this.loadedPosts.splice(i,1);
   });
 }
