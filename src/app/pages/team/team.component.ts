@@ -15,7 +15,7 @@ export class TeamComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private postsService: PostsService,
-    private router: Router
+
   ) {}
   searchText: any;
 
