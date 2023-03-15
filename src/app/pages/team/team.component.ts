@@ -36,8 +36,6 @@ ngOnInit(): void {
     },
   });
 }
-// deleteItem(i:number){}
-
 deleteItem(i:number) {
   // Send Http request
   this.postsService.deletePosts().subscribe(() => {
