@@ -13,8 +13,10 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./player.component.css'],
 })
 export class PlayerComponent implements OnInit {
+  // [x: string]: any;
   getTeamId: any;
   teamData: any;
+i:any;
 
   constructor(
     public param: ActivatedRoute,
@@ -41,6 +43,44 @@ export class PlayerComponent implements OnInit {
       },
     });
 
+
+//     selectedItem(this.i);{
+//       // SeselectedItemnd Http request
+//       this.postsService.fetchPosts().subscribe(() => {
+//         this.loadedPosts.filter((el:any)=>{
+// return el.id==  this.i;
+//         })
+//       });
+   // }
+
+    // this.getTeamId = this.param.snapshot.paramMap.get('id');
+    // console.log(this.getTeamId, 'getteam');
+
+    // if(this.getTeamId){
+    // this.teamData =  this.loadedPosts.filter((value)=>{
+    //   return value.id == this.getTeamId;
+    // });
+    // console.log(this.teamData,'teamdata>>');
+    // }
+
+    this.loadedPosts = this.loadedPosts.filter((el) => {
+      return el.id == this.getTeamId;
+    });
+
+  }
+}
+
+
+
+function selectedItem(i: any) {
+  throw new Error('Function not implemented.');
+}
+// function selectedItem(i: any, number: any) {
+//   throw new Error('Function not implemented.');
+// }
+// const menulist = menuKeys.map(menuKey => category.menulist[menuKey]);
+// return { ...category, menulist };
+
     // this.isFetching = true;
     // this.postsService.fetchPosts().subscribe({
     //   next: (posts: any) => {
@@ -57,23 +97,3 @@ export class PlayerComponent implements OnInit {
     //     this.error = error.message;
     //   },
     // });
-
-    this.getTeamId = this.param.snapshot.paramMap.get('id');
-    console.log(this.getTeamId, 'getteam');
-
-    // if(this.getTeamId){
-    // this.teamData =  this.loadedPosts.filter((value)=>{
-    //   return value.id == this.getTeamId;
-    // });
-    // console.log(this.teamData,'teamdata>>');
-    // }
-
-    const sortedBy = this.loadedPosts.filter((el) => {
-      return el.id == this.getTeamId;
-    });
-console.log(sortedBy.length)
-  }
-}
-
-// const menulist = menuKeys.map(menuKey => category.menulist[menuKey]);
-// return { ...category, menulist };

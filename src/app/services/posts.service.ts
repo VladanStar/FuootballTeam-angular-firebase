@@ -6,12 +6,14 @@ import {
   HttpEventType,
 } from '@angular/common/http';
 import { map, catchError, tap } from 'rxjs/operators';
-import { Subject, throwError } from 'rxjs';
+import { Observable, Subject, throwError } from 'rxjs';
 
 import { Post } from '../post.model';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
+
+items: Observable<Post[]> | undefined;
   [x: string]: any;
   error = new Subject<string>();
 
@@ -63,7 +65,9 @@ export class PostsService {
         })
       );
   }
-
+  getItems() {
+    return this.items;
+  }
   deletePosts() {
     return this.http
       .delete('https://bicproject2-c0d6d-default-rtdb.europe-west1.firebasedatabase.app/posts.json', {
