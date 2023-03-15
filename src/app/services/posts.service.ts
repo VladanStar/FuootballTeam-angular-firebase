@@ -12,6 +12,7 @@ import { Post } from '../post.model';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
+  [x: string]: any;
   error = new Subject<string>();
 
   constructor(private http: HttpClient) {}

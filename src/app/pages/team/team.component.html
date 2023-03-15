@@ -3,6 +3,8 @@
 
 <input type="text" name="search " [(ngModel)]="searchText" placeholder="search player">
 <!-- <button class="add-button" routerLink="add" ><i class="bi bi-person-fill-add">ADD</i></button> -->
+
+
     <div class="col-lg-4 cardy" *ngFor="let pd of loadedPosts |filter:searchText; let i = index">
       <div class="playerbox mt-3 mb-3">
         <img src="https://oks.org.rs/wp-content/uploads/2019/12/Icons-Ekipni_sportovi_letnje_OI-fudbal-220x220.png" alt="player" />
@@ -15,7 +17,7 @@
 
       </div>
 
-      <a class="buybtn" [routerLink]="['/team',pd.id]">View More &nbsp;<i class="bi bi-binoculars"></i></a>
+      <a class="buybtn" [routerLink]="['/team/',pd.id]">View More &nbsp;<i class="bi bi-binoculars"></i></a>
        <!-- <div>
   </div> -->
     </div>
