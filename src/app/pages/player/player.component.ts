@@ -49,14 +49,16 @@ values:any;
 // });
 
 this.getTeamId = this.param.snapshot.paramMap.get('id');
-console.log(this.getTeamId,'getteam');
+console.log(this.getTeamId,'getteam id');
 if(this.getTeamId){
-this.loadedPosts =  this.loadedPosts.filter((value)=>{
-  return   value.id == this.getTeamId;
+// this.loadedPosts =  this.loadedPosts.filter((value)=>{
+//   return   value.id == this.getTeamId;
 
 
-  value.id == this.getTeamId ;
-});
+
+// });
+this.teamData=this.loadedPosts
+
 console.log(this.loadedPosts.splice(this.getTeamId,1),'teamdata');
 }
 
