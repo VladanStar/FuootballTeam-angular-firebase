@@ -23,7 +23,6 @@ error!: string | null;
 private errorSub!: Subscription;
 ngOnInit(): void {
 
-
   this.isFetching = true;
   this.postsService.fetchPosts().subscribe({
     next: (posts) => {
