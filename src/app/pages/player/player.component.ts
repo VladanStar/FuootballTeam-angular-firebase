@@ -15,12 +15,11 @@ import { PostsService } from 'src/app/services/posts.service';
 export class PlayerComponent implements OnInit {
 
   getTeamId:any;
-  teamData:Post[] = []
+  teamData:any;
 
 
   constructor( public param:ActivatedRoute, private http: HttpClient, private postsService: PostsService){}
-  searchText:any;
-values:any;
+
   loadedPosts: Post[] = [];
   isFetching = false;
   error!: string | null;
@@ -29,41 +28,48 @@ values:any;
 
   ngOnInit(): void {
 
+    this.isFetching = true;
+    this.postsService.fetchPosts().subscribe({
+      next: (posts) => {
+        this.isFetching = false;
+        this.loadedPosts = posts;
+      },
+      error: (error) => {
+        console.log('ERROR =', error);
+        this.isFetching = false;
+        this.error = error.message;
+      },
+    });
 
-
-this.isFetching = true;
-this.postsService.fetchPosts().subscribe({
-  next: (posts: any) => {
-    this.isFetching = false;
-    this.loadedPosts = posts;
-posts.forEach((elem:any)=>{
-const y={...elem.playload.toJSON()};
-this.loadedPosts.push(y as unknown as Post)
-})
-  },
-  error: (error: { message: any; }) => {
-    console.log('ERROR =', error);
-    this.isFetching = false;
-    this.error = error.message;
-  },
-});
-
-this.getTeamId = this.param.snapshot.paramMap.get('id');
-console.log(this.getTeamId,'getteam id');
-
-// this.loadedPosts =  this.loadedPosts.filter((value)=>{
-//   return   value.id == this.getTeamId;
-
-
-  }}
+// this.isFetching = true;
+// this.postsService.fetchPosts().subscribe({
+//   next: (posts: any) => {
+//     this.isFetching = false;
+//     this.loadedPosts = posts;
+// posts.forEach((elem:any)=>{
+// const y={...elem.playload.toJSON()};
+// this.loadedPosts.push(y as unknown as Post)
+// })
+//   },
+//   error: (error: { message: any; }) => {
+//     console.log('ERROR =', error);
+//     this.isFetching = false;
+//     this.error = error.message;
+//   },
 // });
 
+this.getTeamId = this.param.snapshot.paramMap.get('id');
+console.log(this.getTeamId,'getteam');
+if(this.getTeamId){
+this.teamData =  this.loadedPosts.filter((value)=>{
+  return value.id == this.getTeamId;
+});
+console.log(this.teamData,'teamdata>>');
+}
 
+  }
 
-
-
-
-
+}
 
 // const menulist = menuKeys.map(menuKey => category.menulist[menuKey]);
 // return { ...category, menulist };

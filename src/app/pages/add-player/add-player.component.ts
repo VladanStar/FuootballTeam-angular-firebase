@@ -38,7 +38,7 @@ ngOnInit(): void {
 }
 onCreatePost(postData: Post) {
   // Send Http request
-  this.postsService.createAndStorePost(postData.title, postData.content, postData.numb);
+  this.postsService.createAndStorePost(postData.title, postData.content, postData.numb, postData.id);
 }
 
 }
