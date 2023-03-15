@@ -2,13 +2,13 @@
 
   <div class="row">
 
-      <div class="col-lg-6" *ngIf="loadedPosts">
+      <div class="col-lg-6" *ngIf="loadedPosts;">
           <a routerLink="../../team" class="btn btn-sm btn-secondary mb-3 "  >Back</a>
           <hr><br>
           <img src="https://oks.org.rs/wp-content/uploads/2019/12/Icons-Ekipni_sportovi_letnje_OI-fudbal-220x220.png" alt="player" />
           <h1 class="mt-3">{{loadedPosts[0].title}}</h1>
           <p>{{loadedPosts[0].content}}</p>
-          <p>{{loadedPosts[0].numb | currency :'EUR'}}</p>
+          <p>{{loadedPosts[0].numb}}</p>
       </div>
 
       <div class="col-lg-6 col-12">
@@ -19,7 +19,7 @@
 
                 <h4> Player Name: {{ loadedPosts[0].title }}</h4>
                 <p>Content: {{ loadedPosts[0].content }}</p>
-                <p>Numb: {{ loadedPosts[0].numb}}</p>
+                <p>Number: {{ loadedPosts[0].numb}}</p>
                 <!-- <p>Transfer value: {{ pd.playerTransferMarket | currency : "EUR" }}</p> -->
                 <br />
 
