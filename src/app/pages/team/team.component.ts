@@ -61,6 +61,7 @@ deleteItem(i:number) {
   // Send Http request
   this.postsService.fetchPosts().subscribe(() => {
     this.loadedPosts.splice(i,1)
+console.log(this.loadedPosts)
   });
 }
 }

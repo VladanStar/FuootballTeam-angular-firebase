@@ -24,9 +24,9 @@ i:any;
     private postsService: PostsService
   ) {}
 
-  loadedPosts: Post[] = [];
+  loadedPosts!: Post[];
   isFetching = false;
-  error!: string | null;
+  error!: string;
   private errorSub!: Subscription;
 
   ngOnInit(): void {
@@ -53,28 +53,39 @@ console.log(this.loadedPosts)
 //       });
 //     }
 
-    // this.getTeamId = this.param.snapshot.paramMap.get('id');
-    // console.log(this.getTeamId, 'getteam');
+    this.getTeamId = this.param.snapshot.paramMap.get('id');
+    console.log(this.getTeamId, 'getteam');
 
-    // if(this.getTeamId){
-    // this.teamData =  this.loadedPosts.filter((value)=>{
-    //   return value.id == this.getTeamId;
-    // });
-    // console.log(this.teamData,'teamdata>>');
-    // }
-
-    this.loadedPosts = this.loadedPosts.filter((el) => {
-      return el.numb == this.getTeamId;
+    if(this.getTeamId){
+    this.teamData =  this.loadedPosts.filter((value)=>{
+      return value.id == this.getTeamId;
     });
+    console.log(this.teamData,'teamdata>>');
+    }
+
+    //   this.getTeamId = this.param.snapshot.paramMap.get('id');
+    //   console.log(this.getTeamId,'getteam');
+    // if(this.getTeamId){
+    //   this.teamData =  this.postsService.fetchPosts().subscribe({
+    //     this.loadedPosts.filter((value:any)=>{
+    //     return value.numb == this.getTeamId;
+    //     })
+    //   }
+    //     )
+
+    //   }
+
+
+
+    }
+
+
 
   }
-}
 
 
 
-function selectedItem(i: any) {
-  throw new Error('Function not implemented.');
-}
+
 // function selectedItem(i: any, number: any) {
 //   throw new Error('Function not implemented.');
 // }

@@ -15,7 +15,7 @@ import { Post } from '../post.model';
 export class PostsService {
   currentPost!: Post;
 
-items: Observable<Post[]> | undefined;
+items!: Observable<Post[]>
 
   error = new Subject<string>();
 
