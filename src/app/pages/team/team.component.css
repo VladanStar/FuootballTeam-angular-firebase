@@ -45,3 +45,6 @@ input {
   right: 0;
   /* apply any additional styles */
 }
+a{
+cursor: pointer;
+}

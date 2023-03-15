@@ -18,9 +18,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { FansWallComponent } from './pages/fans-wall/fans-wall.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PlayerComponent } from './pages/player/player.component';
 
 @NgModule({
-  declarations: [AppComponent, TeamComponent, HeaderComponent, FooterComponent, AddPlayerComponent, AboutComponent, ContactComponent, HomeComponent, FansWallComponent, NotFoundComponent],
+  declarations: [AppComponent, TeamComponent, HeaderComponent, FooterComponent, AddPlayerComponent, AboutComponent, ContactComponent, HomeComponent, FansWallComponent, NotFoundComponent, PlayerComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule,    AppRoutingModule, FormsModule, ReactiveFormsModule,  Ng2SearchPipeModule],
   providers: [
     {
