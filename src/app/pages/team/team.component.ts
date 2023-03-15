@@ -42,6 +42,7 @@ deleteItem(i:number) {
     this.loadedPosts.splice(i,1);
   });
 }
+
 }
 
 
