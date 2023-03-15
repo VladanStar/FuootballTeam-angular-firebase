@@ -7,17 +7,19 @@ import {
 } from '@angular/common/http';
 import { map, catchError, tap } from 'rxjs/operators';
 import { Observable, Subject, throwError } from 'rxjs';
+import { Router } from "@angular/router";
 
 import { Post } from '../post.model';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
+  currentPost!: Post;
 
 items: Observable<Post[]> | undefined;
   [x: string]: any;
   error = new Subject<string>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router:Router) {}
 
   createAndStorePost(title: string, content: string, numb: number, id:string ) {
     const postData: Post = { title: title, content: content, numb: numb, id:id };
@@ -65,6 +67,11 @@ items: Observable<Post[]> | undefined;
         })
       );
   }
+
+  showFullPost = (post: Post): void => {
+    this['currentPost'] = post;
+    this.router.navigate(["/post-detail"]);
+  };
   getItems() {
     return this.items;
   }
