@@ -35,6 +35,7 @@ i:any;
       next: (posts) => {
         this.isFetching = false;
         this.loadedPosts = posts;
+console.log(this.loadedPosts)
       },
       error: (error) => {
         console.log('ERROR =', error);
@@ -43,15 +44,14 @@ i:any;
       },
     });
 
-
-//     selectedItem(this.i);{
+//     selectedItem(this.i):{
 //       // SeselectedItemnd Http request
 //       this.postsService.fetchPosts().subscribe(() => {
 //         this.loadedPosts.filter((el:any)=>{
 // return el.id==  this.i;
 //         })
 //       });
-   // }
+//     }
 
     // this.getTeamId = this.param.snapshot.paramMap.get('id');
     // console.log(this.getTeamId, 'getteam');
@@ -64,7 +64,7 @@ i:any;
     // }
 
     this.loadedPosts = this.loadedPosts.filter((el) => {
-      return el.id == this.getTeamId;
+      return el.numb == this.getTeamId;
     });
 
   }
