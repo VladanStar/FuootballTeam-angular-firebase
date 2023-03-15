@@ -19,7 +19,7 @@ searchText:any;
 
 loadedPosts: Post[] = [];
 isFetching = false;
-error!: string | null;
+error!: string ;
 private errorSub!: Subscription;
 ngOnInit(): void {
 
