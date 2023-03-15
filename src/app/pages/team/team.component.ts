@@ -28,6 +28,7 @@ ngOnInit(): void {
     next: (posts) => {
       this.isFetching = false;
       this.loadedPosts = posts;
+      console.log(this.loadedPosts)
     },
     error: (error) => {
       console.log('ERROR =', error);
