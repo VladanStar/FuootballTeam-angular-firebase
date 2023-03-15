@@ -60,7 +60,7 @@ console.log(this.loadedPosts)
     this.teamData =  this.loadedPosts.filter((value)=>{
       return value.id == this.getTeamId;
     });
-    console.log(this.teamData,'teamdata>>');
+    console.log(this.teamData,'teamdata');
     }
 
     //   this.getTeamId = this.param.snapshot.paramMap.get('id');
