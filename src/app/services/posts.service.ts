@@ -15,7 +15,8 @@ import { Post } from '../post.model';
 export class PostsService {
   currentPost!: Post;
 
-items!: Observable<Post[]>
+items!: Observable<Post[]>;
+
 
   error = new Subject<string>();
 
@@ -68,13 +69,7 @@ items!: Observable<Post[]>
       );
   }
 
-  showFullPost = (post: Post): void => {
-    this['currentPost'] = post;
-    this.router.navigate(["/post-detail"]);
-  };
-  getItems() {
-    return this.items;
-  }
+
   deletePosts() {
     return this.http
       .delete('https://bicproject2-c0d6d-default-rtdb.europe-west1.firebasedatabase.app/posts.json', {
@@ -93,4 +88,6 @@ items!: Observable<Post[]>
         })
       );
   }
+
+
 }
