@@ -14,6 +14,7 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class TeamComponent implements OnInit {
 constructor( private http: HttpClient, private postsService: PostsService){}
+searchText:any;
 
 loadedPosts: Post[] = [];
 isFetching = false;
@@ -35,6 +36,7 @@ this.postsService.fetchPosts().subscribe({
   },
 });
 }
+deleteItem(i:number){}
 }
 
 

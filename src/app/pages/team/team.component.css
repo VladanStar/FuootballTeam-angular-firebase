@@ -1,0 +1,47 @@
+.playerbox {
+  padding: 5px 5px;
+  border: 2px solid var(--primary-color);
+  height: 18rem;
+  box-shadow: 2px 2px 2px;
+  position: relative;
+  font-size: 14px;
+
+}
+.playerbox img {
+  width: 20%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid red;
+}
+.cardy {
+  background-color:#f0a8f0;
+
+}
+.playerbox h1 {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.buybtn {
+  color: #000;
+  background-color: coral;
+  padding: 7px 7px;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  bottom: 3rem;
+}
+
+input {
+  border: 2px solid var(--primary-color);
+  margin: 15px;
+}
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* apply any additional styles */
+}

@@ -17,10 +17,11 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FansWallComponent } from './pages/fans-wall/fans-wall.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [AppComponent, TeamComponent, HeaderComponent, FooterComponent, AddPlayerComponent, AboutComponent, ContactComponent, HomeComponent, FansWallComponent, NotFoundComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule,    AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule,    AppRoutingModule, FormsModule, ReactiveFormsModule,  Ng2SearchPipeModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

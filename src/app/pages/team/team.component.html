@@ -1,26 +1,25 @@
-
-<div class="container">
+<div class="container mt-5 mb-5">
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
-      <p *ngIf="loadedPosts.length < 1 && !isFetching">No posts available!</p>
-      <ul class="list-group" *ngIf="loadedPosts.length >= 1 && !isFetching">
-        <li class="list-group-item" *ngFor="let post of loadedPosts">
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.content }}</p>
-          <p>{{ post.numb }}</p>
-        </li>
-      </ul>
-      <p *ngIf="isFetching && !error">Loading...</p>
-      <div class="alert alert-danger" *ngIf="error">
-        <h1>An Error Occurred!</h1>
-        <p>{{ error }}</p>
+<input type="text" name="search " [(ngModel)]="searchText" placeholder="search player">
+<!-- <button class="add-button" routerLink="add" ><i class="bi bi-person-fill-add">ADD</i></button> -->
+    <div class="col-lg-4 cardy" *ngFor="let pd of loadedPosts |filter:searchText; let i = index">
+      <div class="playerbox mt-3 mb-3">
+        <img src="https://oks.org.rs/wp-content/uploads/2019/12/Icons-Ekipni_sportovi_letnje_OI-fudbal-220x220.png" alt="player" />
+        <h1>{{ pd.title }}</h1>
+        <p>Details: {{ pd.playerDetails }}</p>
+        <p>International: {{ pd.content }}</p>
+        <!-- <p>Transfer value: {{ pd.playerTransferMarket | currency : "EUR" }}</p> -->
+        <br />
+        <a class="delete-button " (click)="deleteItem(i)"><i class="bi bi-x-circle-fill"></i></a>
 
       </div>
+
+      <a class="buybtn" [routerLink]="['/team',pd.id]">View More &nbsp;<i class="bi bi-binoculars"></i></a>
+       <!-- <div>
+  </div> -->
     </div>
+
+
   </div>
 </div>
