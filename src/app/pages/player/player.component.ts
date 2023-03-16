@@ -29,40 +29,52 @@ export class PlayerComponent implements OnInit {
   error!: string;
   private errorSub!: Subscription;
 
+
   ngOnInit(): void {
-    this.isFetching = true;
-    this.postsService.fetchPosts().subscribe({
-      next: (posts) => {
-        this.isFetching = false;
-        this.loadedPosts = posts;
-        console.log(this.loadedPosts);
-        console.log(Array.isArray(this.loadedPosts));
-      },
-      error: (error) => {
-        console.log('ERROR =', error);
-        this.isFetching = false;
-        this.error = error.message;
-      },
-    });
-
-    //     selectedItem(this.i):{
-    //       // SeselectedItemnd Http request
-    //       this.postsService.fetchPosts().subscribe(() => {
-    //         this.loadedPosts.filter((el:any)=>{
-    // return el.id==  this.i;
-    //         })
-    //       });
-    //     }
-
-    this.getTeamId = this.param.snapshot.paramMap.get('numb');
-    console.log(this.getTeamId, 'getteam');
-
-    if (this.getTeamId) {
-      this.loadedPosts.filter((value) => {
-        return value.id == this.getTeamId;
-      });
-      console.log(this.loadedPosts, 'teamdata');
+  //   this.getTeamId = this.param.snapshot.paramMap.get('numb');
+   console.log(this.getTeamId,'getteam');
+  if(true){
+    this.teamData =  this.postsService.fetchPosts().subscribe(
+      this.teamData.filter((value:any)=>{
+      return value.id == this.getTeamId;
     }
+    ));
+    console.log(this.teamData,'teamdata');
+  }
+  // ngOnInit(): void {
+  //   this.isFetching = true;
+  //   this.postsService.fetchPosts().subscribe({
+  //     next: (posts) => {
+  //       this.isFetching = false;
+  //       this.loadedPosts = posts;
+  //       console.log(this.loadedPosts);
+  //       console.log(Array.isArray(this.loadedPosts));
+  //     },
+  //     error: (error) => {
+  //       console.log('ERROR =', error);
+  //       this.isFetching = false;
+  //       this.error = error.message;
+  //     },
+  //   });
+
+  //   //     selectedItem(this.i):{
+  //   //       // SeselectedItemnd Http request
+  //   //       this.postsService.fetchPosts().subscribe(() => {
+  //   //         this.loadedPosts.filter((el:any)=>{
+  //   // return el.id==  this.i;
+  //   //         })
+  //   //       });
+  //   //     }
+
+  //   this.getTeamId = this.param.snapshot.paramMap.get('numb');
+  //   console.log(this.getTeamId, 'getteam');
+
+  //   if (this.getTeamId) {
+  //     this.loadedPosts.filter((value) => {
+  //       return value.id == this.getTeamId;
+  //     });
+  //     console.log(this.loadedPosts, 'teamdata');
+  //   }
 
     //   this.getTeamId = this.param.snapshot.paramMap.get('id');
     //   console.log(this.getTeamId,'getteam');
@@ -75,9 +87,9 @@ export class PlayerComponent implements OnInit {
     //     )
 
     //   }
-  }
+ // }
 }
-
+}
 // function selectedItem(i: any, number: any) {
 //   throw new Error('Function not implemented.');
 // }
