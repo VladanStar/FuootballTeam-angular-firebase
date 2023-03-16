@@ -31,7 +31,7 @@ export class PlayerComponent implements OnInit {
 
 
   ngOnInit(): void {
-  //   this.getTeamId = this.param.snapshot.paramMap.get('numb');
+   this.getTeamId = this.param.snapshot.paramMap.get('numb');
    console.log(this.getTeamId,'getteam');
   if(true){
     this.teamData =  this.postsService.fetchPosts().subscribe(
