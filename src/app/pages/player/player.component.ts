@@ -16,7 +16,7 @@ export class PlayerComponent implements OnInit {
   // [x: string]: any;
   getTeamId: any;
   teamData: any;
-i:any;
+  i: any;
 
   constructor(
     public param: ActivatedRoute,
@@ -35,7 +35,8 @@ i:any;
       next: (posts) => {
         this.isFetching = false;
         this.loadedPosts = posts;
-console.log(this.loadedPosts)
+        console.log(this.loadedPosts);
+        console.log(Array.isArray(this.loadedPosts));
       },
       error: (error) => {
         console.log('ERROR =', error);
@@ -44,23 +45,23 @@ console.log(this.loadedPosts)
       },
     });
 
-//     selectedItem(this.i):{
-//       // SeselectedItemnd Http request
-//       this.postsService.fetchPosts().subscribe(() => {
-//         this.loadedPosts.filter((el:any)=>{
-// return el.id==  this.i;
-//         })
-//       });
-//     }
+    //     selectedItem(this.i):{
+    //       // SeselectedItemnd Http request
+    //       this.postsService.fetchPosts().subscribe(() => {
+    //         this.loadedPosts.filter((el:any)=>{
+    // return el.id==  this.i;
+    //         })
+    //       });
+    //     }
 
     this.getTeamId = this.param.snapshot.paramMap.get('numb');
     console.log(this.getTeamId, 'getteam');
 
-    if(this.getTeamId){
-    this.teamData =  this.loadedPosts.filter((value)=>{
-      return value.id == this.getTeamId;
-    });
-    console.log(this.teamData,'teamdata');
+    if (this.getTeamId) {
+      this.loadedPosts.filter((value) => {
+        return value.id == this.getTeamId;
+      });
+      console.log(this.loadedPosts, 'teamdata');
     }
 
     //   this.getTeamId = this.param.snapshot.paramMap.get('id');
@@ -74,17 +75,8 @@ console.log(this.loadedPosts)
     //     )
 
     //   }
-
-
-
-    }
-
-
-
   }
-
-
-
+}
 
 // function selectedItem(i: any, number: any) {
 //   throw new Error('Function not implemented.');
@@ -92,19 +84,19 @@ console.log(this.loadedPosts)
 // const menulist = menuKeys.map(menuKey => category.menulist[menuKey]);
 // return { ...category, menulist };
 
-    // this.isFetching = true;
-    // this.postsService.fetchPosts().subscribe({
-    //   next: (posts: any) => {
-    //     this.isFetching = false;
-    //     this.loadedPosts = posts;
-    // posts.forEach((elem:any)=>{
-    // const y={...elem.playload.toJSON()};
-    // this.loadedPosts.push(y as unknown as Post)
-    // })
-    //   },
-    //   error: (error: { message: any; }) => {
-    //     console.log('ERROR =', error);
-    //     this.isFetching = false;
-    //     this.error = error.message;
-    //   },
-    // });
+// this.isFetching = true;
+// this.postsService.fetchPosts().subscribe({
+//   next: (posts: any) => {
+//     this.isFetching = false;
+//     this.loadedPosts = posts;
+// posts.forEach((elem:any)=>{
+// const y={...elem.playload.toJSON()};
+// this.loadedPosts.push(y as unknown as Post)
+// })
+//   },
+//   error: (error: { message: any; }) => {
+//     console.log('ERROR =', error);
+//     this.isFetching = false;
+//     this.error = error.message;
+//   },
+// });
