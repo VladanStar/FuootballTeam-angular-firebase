@@ -11,12 +11,13 @@ import { PlayerComponent } from './pages/player/player.component';
 
 const routes: Routes = [
 {path:"team",component:TeamComponent},
+{path:'team/:id',component:PlayerComponent},
 {path:'add', component:AddPlayerComponent},
 {path:'about', component:AboutComponent},
 {path:"contact",component:ContactComponent },
 {path:"", component:HomeComponent},
 {path:'fans', component:FansWallComponent},
-{path:'team/:id',component:PlayerComponent},
+
 
 {path:"not-found", component:NotFoundComponent},
 { path: '**', redirectTo: '/not-found' },

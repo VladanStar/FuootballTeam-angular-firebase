@@ -53,7 +53,7 @@ console.log(this.loadedPosts)
 //       });
 //     }
 
-    this.getTeamId = this.param.snapshot.paramMap.get('id');
+    this.getTeamId = this.param.snapshot.paramMap.get('numb');
     console.log(this.getTeamId, 'getteam');
 
     if(this.getTeamId){
