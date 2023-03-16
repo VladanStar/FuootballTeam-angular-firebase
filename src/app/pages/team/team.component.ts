@@ -64,4 +64,12 @@ deleteItem(i:number) {
 console.log(this.loadedPosts)
   });
 }
+// selectedItem(i:number) {
+//   // Send Http request
+//   this.postsService.fetchPosts().subscribe(() => {
+//     this.loadedPosts.subscribe((data:any)=>{
+//       return data.id == i;
+//     }
+//   });
+// }
 }
