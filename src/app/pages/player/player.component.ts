@@ -37,7 +37,7 @@ ngOnInit(): void {
     this.isFetching = true;
     this.postsService.fetchPosts().subscribe({
       next: (posts) => {
-        this.isFetching = true;
+        this.isFetching = false;
         this.loadedPosts = posts.filter(post => post.numb === this.getTeamId);
         console.log(this.loadedPosts);
         console.log(Array.isArray(this.loadedPosts));
