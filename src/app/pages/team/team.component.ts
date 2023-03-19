@@ -7,12 +7,15 @@ import { Post } from 'src/app/post.model';
 import { PostsService } from 'src/app/services/posts.service';
 
 
+
+
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
+[x: string]: any;
 constructor( private http: HttpClient, private postsService: PostsService){}
 searchText:any;
 
