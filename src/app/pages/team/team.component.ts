@@ -8,6 +8,8 @@ import { PostsService } from 'src/app/services/posts.service';
 import { NgxPaginationModule } from 'ngx-pagination/public-api';
 
 
+
+
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -15,6 +17,7 @@ import { NgxPaginationModule } from 'ngx-pagination/public-api';
 
 })
 export class TeamComponent implements OnInit {
+[x: string]: any;
 constructor( private http: HttpClient, private postsService: PostsService){}
 searchText:any;
 
@@ -28,23 +31,7 @@ private errorSub!: Subscription;
 ngOnInit(): void {
 
 
-// this.isFetching = true;
-// this.postsService.fetchPosts().subscribe({
-//   next: (posts: any) => {
-//     this.isFetching = false;
-//     this.loadedPosts = posts;
-// posts.forEach((elem:any)=>{
-// const y={...elem.playload.toJSON()};
-// this.loadedPosts.push(y as unknown as Post)
-// console.log(this.loadedPosts)
-// })
-//   },
-//   error: (error: { message: any; }) => {
-//     console.log('ERROR =', error);
-//     this.isFetching = false;
-//     this.error = error.message;
-//   },
-// });
+
 
 this.isFetching = true;
 this.postsService.fetchPosts().subscribe({
@@ -71,12 +58,5 @@ deleteItem(i:number) {
 console.log(this.loadedPosts)
   });
 }
-// selectedItem(i:number) {
-//   // Send Http request
-//   this.postsService.fetchPosts().subscribe(() => {
-//     this.loadedPosts.subscribe((data:any)=>{
-//       return data.id == i;
-//     }
-//   });
-// }
+
 }
