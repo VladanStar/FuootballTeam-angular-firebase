@@ -13,6 +13,7 @@ import { Post } from '../post.model';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
+  [x: string]: any;
   currentPost!: Post;
 
 items!: Observable<Post[]>;
@@ -67,6 +68,12 @@ items!: Observable<Post[]>;
           return throwError(() => Error(errorRes));
         })
       );
+  }
+
+  getTeamById(id: string): Observable<Post[]> {
+    return this.fetchPosts().pipe(
+      map((posts) => posts.filter((post) => post.id === id))
+    );
   }
 
 

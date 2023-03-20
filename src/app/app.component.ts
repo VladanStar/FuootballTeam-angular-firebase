@@ -59,7 +59,22 @@ export class AppComponent implements OnInit, OnDestroy {
       },
     });
   }
-
+  // onFetchPost(i:any) {
+  //   // Send Http request
+  //   this.isFetching = true;
+  //   this.postsService.fetchPosts().subscribe({
+  //     next: (posts) => {
+  //       console.log('ovo su postovi', posts);
+  //       this.isFetching = false;
+  //       this.loadedPosts = posts;
+  //     },
+  //     error: (error) => {
+  //       this.isFetching = false;
+  //       this.error = error.message;
+  //       console.log(error);
+  //     },
+  //   });
+  //}
   onClearPosts() {
     // Send Http request
     this.postsService.deletePosts().subscribe(() => {
